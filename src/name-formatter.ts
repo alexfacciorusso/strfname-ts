@@ -36,15 +36,12 @@ const tokenMap: Record<string, (name: Name) => string> = {
   // First Name
   'F': (name) => name.firstName || '',
   'f': (name) => (name.firstName || '').toLowerCase(),
-  'FIRST': (name) => (name.firstName || '').toUpperCase(),
   // Last Name
   'L': (name) => name.lastName || '',
   'l': (name) => (name.lastName || '').toLowerCase(),
-  'LAST': (name) => (name.lastName || '').toUpperCase(),
   // Middle Name
   'M': (name) => name.middleName || '',
   'm': (name) => (name.middleName || '').toLowerCase(),
-  'MIDDLE': (name) => (name.middleName || '').toUpperCase(),
   // First Initial
   'I': (name) => (name.firstName ? name.firstName.charAt(0).toUpperCase() : ''),
   'i': (name) => (name.firstName ? name.firstName.charAt(0).toLowerCase() : ''),
@@ -56,9 +53,6 @@ const tokenMap: Record<string, (name: Name) => string> = {
   'k': (name) => (name.lastName ? name.lastName.charAt(0).toLowerCase() : ''),
 };
 
-// Generate the regex dynamically from the keys of the tokenMap.
-// This makes the function more maintainable; add a token to the map,
-// and it's automatically included in the regex.
 const formatTokenRegex = new RegExp(Object.keys(tokenMap).join('|'), 'g');
 
 /**
@@ -66,6 +60,7 @@ const formatTokenRegex = new RegExp(Object.keys(tokenMap).join('|'), 'g');
  * This is the core function of the library.
  * @param options - An object conforming to the FormatNameOptions interface.
  * @returns The formatted name as a string.
+ * @see setDefaultFormat
  */
 export const formatName = (options: FormatNameOptions): string => {
   if (!options || !options.name) {
@@ -79,9 +74,6 @@ export const formatName = (options: FormatNameOptions): string => {
   }
 
   return formatToUse.replace(formatTokenRegex, (match) => {
-    // Find the corresponding function in the token map and execute it.
-    // If a token is not found (which shouldn't happen with our regex),
-    // it returns an empty string.
     const transform = tokenMap[match];
     return transform ? transform(options.name) : '';
   });

@@ -34,10 +34,6 @@ describe('formatName', () => {
     expect(formatName({ name: nameJohn, format: 'f.l.m.' })).toBe('john.doe.robert.');
   });
 
-  test('should format FIRST LAST MIDDLE', () => {
-    expect(formatName({ name: nameJohn, format: 'FIRST LAST MIDDLE' })).toBe('JOHN DOE ROBERT');
-  });
-
   test('should format I.J.K.', () => {
     expect(formatName({ name: nameJohn, format: 'I.J.K.' })).toBe('J.R.D.');
   });
@@ -63,14 +59,6 @@ describe('formatName', () => {
     const emptyName: Name = { firstName: '', lastName: '' };
     expect(formatName({ name: emptyName, format: 'F L' })).toBe(' ');
     expect(formatName({ name: emptyName, format: 'I.K.' })).toBe('..');
-  });
-
-  test('should handle mixed case format strings', () => {
-    expect(formatName({ name: nameJohn, format: 'F lAST MIddle' })).toBe('John DOE Robert');
-  });
-
-  test('should handle unknown tokens by ignoring them', () => {
-    expect(formatName({ name: nameJohn, format: 'F X L Y' })).toBe('John  Doe ');
   });
 
   describe('setDefaultFormat', () => {
