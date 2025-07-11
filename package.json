@@ -1,0 +1,23 @@
+{
+  "name": "name-formatter",
+  "version": "1.0.0",
+  "description": "A TypeScript library to format names.",
+  "main": "dist/name-formatter.js",
+  "types": "dist/name-formatter.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --runInBand"
+  },
+  "keywords": [
+    "typescript",
+    "name",
+    "formatter"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.0.0"
+  }
+}
