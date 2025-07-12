@@ -1,18 +1,14 @@
-/**
- * Defines the structure for a name object, including optional parts.
- */
 export interface Name {
-  firstName: string;
-  middleName?: string; // Middle name is now optional
-  lastName: string;
+  firstName?: string | null;
+  middleName?: string | null;
+  lastName?: string | null;
 }
 
 /**
  * Options for the formatName function.
  */
-export interface FormatNameOptions {
-  name: Name;
-  format?: string;
+export interface FormatNameOptions extends Name {
+  format?: string | null;
 }
 
 /**
@@ -63,7 +59,7 @@ const formatTokenRegex = new RegExp(Object.keys(tokenMap).join('|'), 'g');
  * @see setDefaultFormat
  */
 export const formatName = (options: FormatNameOptions): string => {
-  if (!options || !options.name) {
+  if (!options) {
     return '';
   }
 
@@ -75,6 +71,6 @@ export const formatName = (options: FormatNameOptions): string => {
 
   return formatToUse.replace(formatTokenRegex, (match) => {
     const transform = tokenMap[match];
-    return transform ? transform(options.name) : '';
+    return transform ? transform(options) : '';
   });
 };

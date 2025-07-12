@@ -4,8 +4,14 @@
   "description": "A TypeScript library to format names.",
   "main": "dist/name-formatter.js",
   "types": "dist/name-formatter.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/name-formatter.js",
+      "require": "./dist/name-formatter.cjs"
+    }
+  },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && cp src/name-formatter.ts dist/name-formatter.cts",
     "test": "jest --runInBand"
   },
   "keywords": [
@@ -14,7 +20,7 @@
     "formatter"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/preset-env": "^7.28.0",
     "@babel/preset-typescript": "^7.27.1",
