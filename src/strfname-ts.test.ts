@@ -1,4 +1,4 @@
-import { formatName, Name, setDefaultFormat, FormatNameOptions } from './name-formatter';
+import { formatName, Name, setDefaultFormat } from './strfname-ts';
 
 describe('formatName', () => {
   const nameJohn: Name = {

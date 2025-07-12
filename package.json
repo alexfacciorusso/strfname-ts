@@ -1,17 +1,17 @@
 {
-  "name": "name-formatter",
+  "name": "strfname-ts",
   "version": "0.1.0",
   "description": "A TypeScript library to format names.",
-  "main": "dist/strfname.js",
-  "types": "dist/strfname.d.ts",
+  "main": "dist/strfname-ts.js",
+  "types": "dist/strfname-ts.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/strfname.js",
-      "require": "./dist/strfname.cjs"
+      "import": "./dist/strfname-ts.js",
+      "require": "./dist/strfname-ts.cjs"
     }
   },
   "scripts": {
-    "build": "tsc && cp src/strfname.ts dist/strfname.cts",
+    "build": "tsc && cp src/strfname-ts.ts dist/strfname-ts.cts",
     "test": "jest --runInBand"
   },
   "keywords": [
