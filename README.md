@@ -1,15 +1,15 @@
-# `strfname-ts`
+# `strfname`
 
 A simple, intuitive TypeScript library for formatting personal names using format strings, based on the **NFN (Name Format Notation)** standard.
 
 ## Installation
 
 ```bash
-npm install strfname-ts
+npm install strfname
 # or
-yarn add strfname-ts
+yarn add strfname
 # or
-pnpm add strfname-ts
+pnpm add strfname
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ pnpm add strfname-ts
 Import the `formatName` function and pass it an options object containing the name and an optional format string.
 
 ```typescript
-import { formatName, Name, setDefaultFormat } from 'strfname-ts';
+import { formatName, Name, setDefaultFormat } from 'strfname';
 
 const name: Name = {
   firstName: 'Ada',
