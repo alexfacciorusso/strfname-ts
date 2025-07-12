@@ -1,6 +1,6 @@
 {
   "name": "name-formatter",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A TypeScript library to format names.",
   "main": "dist/name-formatter.js",
   "types": "dist/name-formatter.d.ts",
