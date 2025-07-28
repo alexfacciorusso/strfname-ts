@@ -1,6 +1,6 @@
 {
   "name": "strfname-ts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A TypeScript library to format names.",
   "main": "dist/strfname-ts.js",
   "types": "dist/strfname-ts.d.ts",
